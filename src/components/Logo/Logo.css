@@ -22,3 +22,9 @@
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 500px) {
+    .Title {
+        display: none;
+    }
+}

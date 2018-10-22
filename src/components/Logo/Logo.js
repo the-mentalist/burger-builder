@@ -10,7 +10,7 @@ const logo = (props) => {
             <div className={classes.Background}>
                 <img src={burgerLogo} alt="logo"/>
             </div>
-            <span>burger builder</span>
+            <span className={classes.Title}>burger builder</span>
         </div>
         
     );

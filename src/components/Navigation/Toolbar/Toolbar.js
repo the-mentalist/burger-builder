@@ -7,9 +7,8 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 const toolbar = (props) => {
     return (
         <header className={classes.Toolbar}>
-            <Logo />
-            <div>MENU</div>
-            <nav><NavigationItems /></nav>
+            <div className={classes.Logo}><Logo /></div>
+            <nav className={classes.DesktopOnly}><NavigationItems /></nav>
         </header>
     );
 };
