@@ -10,6 +10,10 @@ class Layout extends Component {
         showSidedrawer: false
     }
 
+    sidedrawerOpenHandler = () => {
+        this.setState({showSidedrawer: true});
+    }
+
     sidedrawerClosedHandler = () => {
         this.setState({showSidedrawer: false});
     }
@@ -17,7 +21,7 @@ class Layout extends Component {
     render () {
         return (
             <div>
-                <Toolbar/>
+                <Toolbar openSidedrawer={this.sidedrawerOpenHandler} />
                 <Sidedrawer show={this.state.showSidedrawer} backdropClosed={this.sidedrawerClosedHandler} />
                 <main className={classes.Content}>{this.props.children}</main>
             </div>
