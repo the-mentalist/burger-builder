@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import classes from './BurgerIngredient.css';
 
+// this is a class component because needed proptypes
 class BurgerIngredient extends Component {
     render () {
         let ingredient = null;
