@@ -6,7 +6,7 @@ import Logo from '../../Logo/Logo';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
 const sidedrawer = (props) => {
-    const attachedClass = [classes.Sidedrawer, classes.Closed];
+    let attachedClass = [classes.Sidedrawer, classes.Close];
     if (props.show) {
         attachedClass = [classes.Sidedrawer, classes.Open];
     }
