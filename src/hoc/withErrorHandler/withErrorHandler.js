@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Modal from '../../components/UI/Modal/Modal';
 
@@ -32,7 +32,7 @@ const errorHandler = (WrappedElement, axios) => {
             return (
                 <div>
                     <Modal show={this.state.error} modalClosed={this.closeModal}>Oops! Something went wrong..</Modal>    
-                    <WrappedElement {...props} />
+                    <WrappedElement {...this.props} />
                 </div>
             )
         }

@@ -113,7 +113,7 @@ class BurgerBuilder extends Component {
         let burger = this.state.error ? <p>An error occured!</p> : <Spinner />;
         if (this.state.ingredients) {
             burger = (
-                <div>
+                <div style={{'display': 'flex', 'justify-content': 'space-around'}}>
                     <Burger ingredients={this.state.ingredients} />
                     <BuildControls
                     ingredientAdded={this.addIngredientHandler}

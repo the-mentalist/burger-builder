@@ -4,7 +4,7 @@ class Checkout extends Component {
     
     render () {
         return (
-            <CheckoutSummary />
+            <div>Checkout Summary</div>
         );
     }
 }
