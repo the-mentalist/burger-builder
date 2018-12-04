@@ -1,15 +1,16 @@
 .BuildControls {
     width: 100%;
-    background-color: #CF8F2E;
+    background-color: #ec7800;
     display: flex;
     flex-flow: column;
     align-items: center;
     box-shadow: 0 2px 1px #ccc;
-    margin: auto;
     padding: 10px 0;
+    flex:1 1 90%;
 }
 
 .OrderButton {
+    margin-top: 40px;
     background-color: #DAD735;
     outline: none;
     cursor: pointer;
@@ -35,6 +36,8 @@
 }
 
 .OrderButton:not(:disabled) {
+    background: linear-gradient(#228c1d, #62a917);
+    color: aliceblue;
     animation: enable 0.3s linear;
 }
 

@@ -21,5 +21,6 @@
     .Burger {
         width: 700px;
         height: 600px;
+        flex: 1 1 50%;
     }
 }
