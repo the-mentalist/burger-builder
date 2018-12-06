@@ -1,12 +1,18 @@
 .BuildControls {
-    width: 100%;
+    width: 97%;
     background-color: #ec7800;
     display: flex;
     flex-flow: column;
     align-items: center;
     box-shadow: 0 2px 1px #ccc;
-    padding: 10px 0;
-    flex:1 1 90%;
+    padding: 10px;
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+    .BuildControls {
+        width: 30%;
+        padding: 10px 0;
+    }
 }
 
 .OrderButton {

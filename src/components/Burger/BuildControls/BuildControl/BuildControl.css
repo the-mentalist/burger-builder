@@ -33,7 +33,17 @@
 .Label {
     padding: 10px;
     font-weight: bold;
-    width: 80px;
+    width: 50px;
+}
+
+@media (min-height: 700px) {
+    .Label {
+        width: 80px;
+    }
+}
+
+.TextLabel {
+    margin: 0 3%;
 }
 
 .BuildControl .Less {  

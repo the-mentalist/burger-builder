@@ -26,7 +26,7 @@ class Layout extends Component {
       backgroundImage: `url(${Background})`
     }
         return (
-            <div style={style}>
+            <div style={style} className={classes.Layout}>
                 <Toolbar toggleSidedrawer={this.sidedrawerToggleHandler} />
                 <Sidedrawer show={this.state.showSidedrawer} backdropClosed={this.sidedrawerClosedHandler} />
                 <main className={classes.Content}>{this.props.children}</main>

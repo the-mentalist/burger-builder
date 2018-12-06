@@ -7,6 +7,7 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import classes from './BurgerBuilder.css';
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -113,15 +114,16 @@ class BurgerBuilder extends Component {
         let burger = this.state.error ? <p>An error occured!</p> : <Spinner />;
         if (this.state.ingredients) {
             burger = (
-                <div style={{'display': 'flex', 'justifyContent': 'space-between', 'padding': '40px'}}>
+                <div className={classes.Content}>
                     <Burger ingredients={this.state.ingredients} />
                     <BuildControls
-                    ingredientAdded={this.addIngredientHandler}
-                    ingredientRemoved={this.removeIngredientHandler}
-                    disabled={disabledInfo}
-                    purchasable={this.state.purchasable}
-                    ordered={this.purchaseHandler}
-                    price={this.state.totalPrice} />
+                        ingredients={this.state.ingredients}
+                        ingredientAdded={this.addIngredientHandler}
+                        ingredientRemoved={this.removeIngredientHandler}
+                        disabled={disabledInfo}
+                        purchasable={this.state.purchasable}
+                        ordered={this.purchaseHandler}
+                        price={this.state.totalPrice} />
                 </div>
             );
             orderSummary = <OrderSummary 

@@ -1,0 +1,11 @@
+.Content {
+    display: flex;
+    padding: 40px;
+    justify-content: space-around;
+}
+
+@media (max-height: 700px) {
+    .Content {
+        flex-flow: column;
+    }
+}

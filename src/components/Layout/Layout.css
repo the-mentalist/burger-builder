@@ -1,3 +1,16 @@
 .Content {
     margin-top: 72px;
 }
+
+.Layout {
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-height: 700px) {
+    .Layout {
+        height: 92.5vh;
+    }
+}
