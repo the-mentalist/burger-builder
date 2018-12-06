@@ -1,11 +1,12 @@
 .Content {
     display: flex;
-    padding: 40px;
+    flex-flow: column;
     justify-content: space-around;
 }
 
-@media (max-height: 700px) {
+@media (min-width: 400px) and (min-height: 650px) {
     .Content {
-        flex-flow: column;
+        flex-flow: row;
+        padding: 40px;
     }
 }
