@@ -17,6 +17,7 @@ const buildControls = (props) => (
             return <BuildControl 
                 key={ctrl.label} 
                 label={ctrl.label}
+                price={props.unit_prices[ctrl.type]}
                 quantity={props.ingredients[ctrl.type]}
                 added={() => props.ingredientAdded(ctrl.type)}
                 removed={() => props.ingredientRemoved(ctrl.type)}
