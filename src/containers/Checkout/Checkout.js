@@ -31,9 +31,10 @@ class Checkout extends Component {
         console.log('render started');
         return (
             <div className={classes.Checkout}>
-                Order Summary
-                <Burger ingredients={this.state.ingredients}/>
-                <h4>Continue to Checkout?</h4>
+                <h3>Your tasty burger is ready to be placed</h3>
+                <div style={{width: '100%', margin: 'auto'}}>
+                    <Burger ingredients={this.state.ingredients} />
+                </div>
                 <Button btnType="Danger" clicked={this.purchaseCancelled}>CANCEL</Button>
                 <Button btnType="Success" clicked={this.purchaseContinued}>CONTINUE</Button>
             </div>
