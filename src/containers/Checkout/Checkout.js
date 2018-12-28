@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom' ;
 
 import classes from './Checkout.css';
 import Burger from '../../components/Burger/Burger';
 import Button from '../../components/UI/Button/Button';
+import ContactData from './ContactData/ContactData';
 
 class Checkout extends Component {
     state = {
@@ -17,18 +19,21 @@ class Checkout extends Component {
         this.props.history.replace('/checkout/contact-data');
     }
 
-    componentDidMount() {
+    componentWillMount () {
         const query = new URLSearchParams(this.props.location.search);
         let ingredients = {};
+        let price = 0;
         for (let param of query.entries()) {
-            ingredients[param[0]] = param[1];
+            if (param[0] === 'price') {
+                price = param[1];
+            } else {
+                ingredients[param[0]] = param[1];
+            }
         }
-        this.setState({ingredients: ingredients});
-        console.log('component mounted');
+        this.setState({ingredients: ingredients, totalPrice: price});
     }
 
     render () {
-        console.log('render started');
         return (
             <div className={classes.Checkout}>
                 <h3>Your tasty burger is ready to be placed</h3>
@@ -37,6 +42,8 @@ class Checkout extends Component {
                 </div>
                 <Button btnType="Danger" clicked={this.purchaseCancelled}>CANCEL</Button>
                 <Button btnType="Success" clicked={this.purchaseContinued}>CONTINUE</Button>
+                <Route path={this.props.match.path + '/contact-data'}
+                    render={() => (<ContactData ingredients={this.state.ingredients} totalPrice={this.state.totalPrice} />)} />
             </div>
         );
     }
