@@ -40,6 +40,7 @@ class ContactData extends Component {
         // close the modal and spinner
         .then(response => {
             this.setState({loading: false});
+            this.props.history.push('/');
         })
         .catch(response => {
             this.setState({loading: false});

@@ -43,7 +43,7 @@ class Checkout extends Component {
                 <Button btnType="Danger" clicked={this.purchaseCancelled}>CANCEL</Button>
                 <Button btnType="Success" clicked={this.purchaseContinued}>CONTINUE</Button>
                 <Route path={this.props.match.path + '/contact-data'}
-                    render={() => (<ContactData ingredients={this.state.ingredients} totalPrice={this.state.totalPrice} />)} />
+                    render={(props) => (<ContactData ingredients={this.state.ingredients} totalPrice={this.state.totalPrice} {...props} />)} />
             </div>
         );
     }
