@@ -94,7 +94,17 @@ class ContactData extends Component {
     }
 
     inputChangedHandler = (event, identifier) => {
-        
+        // update the value
+        // event.target.value
+        let orderForm = {
+            ...this.state.orderForm
+        };
+        let properties = {
+            ...orderForm[identifier]
+        };
+        properties.value = event.target.value;
+        orderForm[identifier] = properties;
+        this.setState({orderForm: orderForm});
     }
 
     render () {
