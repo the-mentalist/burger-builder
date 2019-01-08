@@ -68,18 +68,14 @@ class ContactData extends Component {
         event.preventDefault();
         console.log(this.props.ingredients);
         this.setState({loading: true});
+        let formData = {};
+        for (let identifier in this.state.orderForm) {
+            formData[identifier] = this.state.orderForm[identifier].value;
+        }
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.totalPrice,
-            customer: {
-                name: '',
-                email: '',
-                phone: '',
-                address: {
-                    postCode: '',
-                    street: ''
-                }
-            }
+            formData: formData
         };
         // orders node is created, .json added for firebase
         axios.post('/orders.json', order)
@@ -117,7 +113,7 @@ class ContactData extends Component {
             });
         }
         let form = (
-            <form>
+            <form onSubmit={this.purchaseContinuedHandler}>
                 {inputElements.map(element => {
                     return <Input 
                         elementtype={element.config.elementType}
@@ -126,7 +122,7 @@ class ContactData extends Component {
                         value={element.config.value}
                         changed={(event) => this.inputChangedHandler(event, element.id)} />
                 })}
-                <Button btnType="Success" clicked={this.purchaseContinuedHandler}>Order</Button>
+                <Button btnType="Success">Order</Button>
             </form>
         );
         if (this.state.loading) {
