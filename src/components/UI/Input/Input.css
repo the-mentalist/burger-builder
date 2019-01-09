@@ -23,5 +23,10 @@
 
 .InputEl:focus {
     outline: none;
-    background-color: #ccc;
+    background-color: #efefef;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: #f5d4d0;
 }
